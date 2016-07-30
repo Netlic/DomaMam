@@ -17,7 +17,40 @@ var CategoryItem = React.createClass({
   }
 });
 
+var SomZvedavy = React.createClass({
+  render: function() {
+    return (
+      <div className="somZvedavy">
+        yupíííííííííí.
+      </div>
+    );
+  }
+});
+
+var Usmev = React.createClass({
+  render: function() {
+    return (
+      <div className="usmev">
+        :- he nedá sa použiť zátvorka
+      </div>
+    );
+  }
+});
+
+var BssbBox = React.createClass({
+  render: function() {
+    return (
+      <div className="bssbBox">
+        <h1>komentar</h1>
+        <CategoryBox />
+        <SomZvedavy />
+        <Usmev />
+      </div>
+    );
+  }
+});
+
 ReactDOM.render(
-  <CategoryBox />,
-  document.getElementById('content')
+  <BssbBox />,
+    document.getElementById('content')
 );
