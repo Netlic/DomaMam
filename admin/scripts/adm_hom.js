@@ -1,15 +1,15 @@
 var OznamBox = React.createClass({
   displayName: 'Admin',
-  render: function(){
+  render: function () {
     return (
-      <div className="oznamBox">
-        <h2>Admin</h2>
-        <h1>tu budeme mať admistrátora webu</h1>
+      <div ClassName='oznamBox'>
+        <h1>Admin</h1>
+        <h2>tu budeme mať admistrátora webu</h2>
       </div>
     )
   }
-});
+})
 ReactDOM.render(
   <OznamBox />,
     document.getElementById('content')
-);
+)
