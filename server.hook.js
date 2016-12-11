@@ -4,5 +4,4 @@ require("babel-register")({
 require("babel-core").transform("code", {
   plugins: ["transform-object-assign"]
 });
-module.exports = require('./scripts/components/homepage.app.js');
-//module.exports = require('./index.js');
+module.exports = require('./server.js');
