@@ -1,10 +1,4 @@
 [
-  {
-    "name": "Jedlo",
-    "items": [{"name":"Jablko"}, {"name": "Klobasa"}]
-  },
-  {
-    "name": "Kuchyna",
-    "items": [{"name":"Pribor"}]
-  }
+  {"name": "Jedlo", "items": [{"name":"Jablko"}, {"name": "Klobasa"}]},
+  {"name": "Kuchyna","items": [{"name":"Pribor"}]}
 ]

@@ -8,5 +8,8 @@ const category = ({title}) => {
   )
 }
 
+category.PropTypes = {
+  title: PropTypes.string.isRequired
+}
 
 export default category

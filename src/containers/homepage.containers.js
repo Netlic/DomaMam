@@ -3,16 +3,19 @@ import { connect } from 'react-redux'
 import CategoriesList from '../components/homepage/categoriesList'
 import Category from '../components/homepage/category'
 
-const CategoriesContainer = ({cats}) => {
+const CategoriesContainer = ({ categories }) => (
   <CategoriesList title="Kategórie">
-    {cats.map(cat => <Category title={cat.name} />)}
+    {categories.map(category => <Category title={category.name} />)}
   </CategoriesList>
-}
+)
 
 CategoriesContainer.propTypes = {
-  cats: PropTypes.arrayOf(PropTypes.shape({
+  categories: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
   })).isRequired,
 }
 
-export default CategoriesContainer
+const mapStateToProps = state => {console.log(state)
+  return { categories: state.categories } }
+
+export default connect(mapStateToProps)(CategoriesContainer)
