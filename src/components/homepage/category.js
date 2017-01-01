@@ -1,9 +1,24 @@
 import React, { PropTypes } from 'react'
+import CategoryItem from './categoryItem'
 
-const category = ({title}) => {
+const categoryItems = (items = []) => {
+  let original = items.length
+  items.length = 2;
+  let citems = (items.map((item, index) => {
+    return <CategoryItem key={index} title={item.name} toBottom={original < 2}/>}))
+  return citems
+}
+
+const category = ({title, items = [{name:'item'},{name:'item1'}]}) => {
   return (
-    <div>
-      {title}
+    <div className="col-lg-4">
+      <div className="col-lg-8 category col-lg-offset-2">
+        <div>
+          <h1>{title}</h1>
+        </div>
+        {categoryItems(items)}
+        <div className="category-detail">...</div>
+      </div>
     </div>
   )
 }

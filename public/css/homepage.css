@@ -1,0 +1,30 @@
+.category {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  height: 4cm;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.category-detail {
+  padding-bottom: 15px
+}
+
+.to-bottom {
+  padding-top: 20px
+}
+
+.plus-category {
+  font-size: 2cm;
+  padding-top: 1cm;
+
+}
+
+.category-add {
+  background-color: #ffffff;
+  border: 2px solid grey;
+}
+
+.category-add:hover {
+  border: 2px dashed black
+}

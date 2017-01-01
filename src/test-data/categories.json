@@ -1,4 +1,5 @@
 [
-  {"name": "Jedlo", "items": [{"name":"Jablko"}, {"name": "Klobása"}]},
-  {"name": "Kuchyňa","items": [{"name":"Príbor"}]}
+  {"name": "Jedlo", "items": [{"name":"Jablko"}, {"name": "Klobása"}, {"name": "Banán"}]},
+  {"name": "Kuchyňa","items": [{"name":"Príbor"}]},
+  {"name": "Test"}
 ]

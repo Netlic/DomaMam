@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoriesContainer from '../containers/homepage.containers'
+import CategoriesContainer from '../containers/homepage/CategoriesContainer.js'
 
 const Homepage = () => (
   <div>
