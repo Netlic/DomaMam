@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { getAllCategories } from './actions/homepage.actions.js'
 import Homepage from './components/homepage.app.js'
 import thunk from 'redux-thunk'
@@ -13,8 +13,12 @@ if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }
 
+const finalReducer = combineReducers({
+  categories : reducer
+})
+
 const store = createStore(
-  reducer,
+  finalReducer,
   applyMiddleware(...middleware)
 );
 

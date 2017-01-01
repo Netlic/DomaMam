@@ -1,5 +1,5 @@
 import {ADD_CATEGORY, REMOVE_CATEGORY, RECEIVE_CATEGORIES} from '../actions/homepage.actions.js'
-import combineReducers from 'redux'
+import { combineReducers } from 'redux'
 
 const categoryAddRemove = (state = [], action) => {
   switch(action.type) {
@@ -17,7 +17,7 @@ const categoryAddRemove = (state = [], action) => {
   }
 }
 
-const categoryWriter = (state = [], action) => {
+const categoriesList = (state = [], action) => {
   switch(action.type) {
     case RECEIVE_CATEGORIES:
       return action.categories.map(categories => categories.name)
@@ -26,10 +26,34 @@ const categoryWriter = (state = [], action) => {
   }
 }
 
-export default categoryWriter
-/*const categoryHandler = combineReducers(
-  categoryAddRemove, categoryWriter
-)
+const allCategories = (state = {}, action) => {
+  switch (action.type) {
+    case RECEIVE_CATEGORIES:
+      return {
+        ...state,
+        ...action.categories.reduce((obj, category) => {
+          obj[category.name] = category
+          return obj
+        }, {})
+      }
+    default:
+      const { categoryId } = action
+      if (categoryId) {
+        return {
+          ...state,
+          [categoryId]: allCategories(state[categoryId], action)
+        }
+      }
+      return state
+  }
+}
 
-export default categoryHandler
-*/
+export default combineReducers({
+  categoryAddRemove,
+  categoriesList,
+  allCategories
+})
+
+export const getCategory = (state, name) => state.allCategories[name]
+
+export const getAllCategories = state => state.categoriesList.map(name => getCategory(state, name))
