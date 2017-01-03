@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
 
 const CategoriesList = ({ title, children }) => (
-  <div>
-    <h3>{title}</h3>
+  <div className="col-lg-12">
+    <div className="col-lg-offset-1">
+      <h3>{title}</h3>
+    </div>
     <div>{children}</div>
   </div>
 )

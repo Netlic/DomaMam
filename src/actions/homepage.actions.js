@@ -22,3 +22,7 @@ export const getAllCategories = () => dispatch => {
     dispatch(receiveCategories(categories))
   })
 }
+
+export const addCategoryToList = name => dispatch => {
+  dispatch(addCategory(name))
+}

@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import CategoriesList from '../../components/homepage/categoriesList'
 import Category from '../../components/homepage/category'
 import { getAllCategories } from '../../reducers/homepage.reducers.js'
-import AddCategory from '../../components/homepage/addMainCategory'
+import AddCategoryButton from '../../components/homepage/addMainCategory'
+import { addCategoryToList } from '../../actions/homepage.actions'
 
 const CategoriesContainer = ({ categories }) => (
   <CategoriesList title="Kategórie">
     {categories.map((category, index) =>
       <Category key={index} title={category.name} items={category.items}/> )}
-      <AddCategory/>
+      <AddCategoryButton onCategoryAdd={() => addCategoryToList('test')}/>
   </CategoriesList>
 )
 

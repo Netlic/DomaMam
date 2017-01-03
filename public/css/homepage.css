@@ -28,3 +28,28 @@
 .category-add:hover {
   border: 2px dashed black
 }
+
+.category-adding {
+  -webkit-animation-name: category-grow; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-fill-mode: forwards;
+  animation-name: category-grow;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes category-grow {
+  from {height: 4cm;}
+  to {height: 10cm;}
+}
+
+/* Standard syntax */
+@keyframes category-grow {
+  from {height: 4cm;}
+  to {height: 10cm;}
+}
+
+.category-form {
+  padding-top: 15px
+}
