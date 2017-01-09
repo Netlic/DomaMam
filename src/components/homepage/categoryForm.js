@@ -15,13 +15,13 @@ const submit = (e) => {
 const CategoryForm = () => {
   return (
     <div className="col-lg-12">
-
+      <form>
         <div className="form-group">
           <label htmlFor="categoryName">Názov kategórie</label>
           <input type="text" className="form-control" id="categoryName" onKeyUp={submit}/>
         </div>
-        <button className="btn btn-primary" onClick={test}>OK</button>
-
+        <input className="btn btn-primary" onClick={test} value="OK"/>
+      </form>
     </div>
   )
 }
