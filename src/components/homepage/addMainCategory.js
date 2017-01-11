@@ -1,11 +1,9 @@
 import React from 'react'
-import CategoryForm from './categoryForm'
+//import CategoryForm from './categoryForm'
+import AddCategory from '../../containers/homepage/AddCategory'
 import $ from 'jquery'
 
 const showNewCategoryForm = () => {
-  /*$(".category-add").addClass('category-adding').addClass('col-lg-12')
-    .parent().removeClass('col-lg-4').addClass('col-lg-6').find('span')
-    .addClass('hidden')*/
     $(".category-add").find('span').addClass('hidden')
     $('.category-form').removeClass('hidden')
 }
@@ -20,7 +18,7 @@ const addMainCategory = ({ onCategoryAdd }) => {
           <span className="glyphicon glyphicon-plus plus-category col-lg-offset-4"></span>
         </div>
         <div className="col-lg-12 hidden category-form">
-          <CategoryForm/>
+          <AddCategory/>
         </div>
       </div>
     </div>

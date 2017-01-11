@@ -7,11 +7,14 @@ import Homepage from './components/homepage.app.js'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import reducer from './reducers/homepage.reducers.js'
+import validator from 'redux-validator';
 
 const middleware = [ thunk ];
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }
+
+middleware.push(validator())
 
 const finalReducer = combineReducers({
   categories : reducer
