@@ -7,7 +7,7 @@ import AddCategoryButton from '../../components/homepage/addMainCategory'
 import { addCategoryToList } from '../../actions/homepage.actions'
 
 const CategoriesContainer = ({ categories }) => (
-  <CategoriesList title="Kategórie">
+  <CategoriesList>
     {categories.map((category, index) =>
       <Category key={index} title={category.name} items={category.items}/> )}
       <AddCategoryButton onCategoryAdd={() => addCategoryToList('test')}/>

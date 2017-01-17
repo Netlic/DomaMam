@@ -53,3 +53,26 @@
 .category-form {
   padding-top: 15px
 }
+
+.menu {
+  background-color: #eeeeee;
+  margin-bottom: 20px
+}
+
+.item-menu, .selected-item-menu {
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item-menu:hover, .selected-item-menu:hover{
+  background-color: #cccccc
+}
+
+.selected-item-menu {
+  background-color: #dddddd
+}

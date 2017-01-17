@@ -1,17 +1,15 @@
 import React, { PropTypes } from 'react'
+import Menu from './menu'
 
-const CategoriesList = ({ title, children }) => (
-  <div className="col-lg-12">
-    <div className="col-lg-offset-1">
-      <h3>{title}</h3>
-    </div>
+const CategoriesList = ({ children }) => (
+  <div className="col-lg-8">
+    <Menu/>
     <div>{children}</div>
   </div>
 )
 
 CategoriesList.propTypes = {
-  children: PropTypes.node,
-  title: PropTypes.string.isRequired
+  children: PropTypes.node
 }
 
 export default CategoriesList
