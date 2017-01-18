@@ -11,7 +11,7 @@ const submit = (e) => {
 
 const AddCategory = ({ dispatch }) => {
   return (
-    <div className="col-lg-12">
+    <div>
       <form onSubmit={e => {
           e.preventDefault()
           let category = $('#categoryName').val()
@@ -19,7 +19,7 @@ const AddCategory = ({ dispatch }) => {
           $('#categoryName').val('')
         }}>
         <div className="form-group">
-          <label htmlFor="categoryName">Názov kategórie</label>
+          <label htmlFor="categoryName">Názov</label>
           <input type="text" className="form-control" id="categoryName" onKeyUp={submit}/>
         </div>
         <input type="submit" className="btn btn-primary col-lg-12" value="OK"/>

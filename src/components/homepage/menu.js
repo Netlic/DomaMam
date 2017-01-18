@@ -5,7 +5,7 @@ const menu = () => {
   return (
     <div className="col-lg-12 menu">
       <MenuItem title={'Doma mám'} isSelected={true}/>
-      <MenuItem title={'Prihásiť'}/>
+      <MenuItem title={'Prihlásiť'} toggleModal={true} target={'#login-modal'}/>
     </div>
   )
 }

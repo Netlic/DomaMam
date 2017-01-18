@@ -8,6 +8,7 @@ import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import reducer from './reducers/homepage.reducers.js'
 import validator from 'redux-validator';
+import $ from 'jquery'
 
 const middleware = [ thunk ];
 if (process.env.NODE_ENV !== 'production') {
@@ -31,5 +32,5 @@ render(
   (<Provider store={store}>
     <Homepage />
   </Provider>),
-  document.getElementById('root')
+  $('#root')[0]
 )
