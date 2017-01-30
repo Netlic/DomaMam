@@ -7,7 +7,7 @@ const menuItem = ({ title, isSelected, toggleModal, target }) => {
       <div className={'h4 ' + menuClass}>{title}</div>
     )
   }
-  return <div className={'h4 ' + menuClass}><a data-toggle="modal" data-target={target}>{title}</a></div>
+  return (<div className={'h4 ' + menuClass} data-toggle="modal" data-target={target}>{title}</div>)
 }
 
 export default menuItem
