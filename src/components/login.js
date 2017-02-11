@@ -1,4 +1,6 @@
 import React from 'react'
+import LoginInput from './loginInput'
+import LoginBtn from './loginButton'
 
 const Login = () => {
   return(
@@ -17,26 +19,12 @@ const Login = () => {
             </div>
           </div>
           <div className="modal-body ">
-            <div className="login ">
-
-              <div className="login-input">
-                <div>
-                  <input type="text" className="" placeholder="prihlasovacie meno"/>
-                </div>
-              </div>
-              <div className="login-input ">
-                <div>
-                  <input type="text" className="" placeholder="heslo"/>
-                </div>
-              </div>
-              <div className="login-input col-lg-12 login-submit">
-                <input type="submit" className="btn btn-primary" value="Prihlásiť"/>
-              </div>
-              <div className="login-input col-lg-12 login-submit">
-                <input type="submit" className="btn btn-warning" value="Registrovať"/>
-              </div>
+            <div className="login">
+              <LoginInput/>
+              <LoginInput placeholder="heslo"/>
+              <LoginBtn/>
+              <LoginBtn className="btn btn-warning" text="Registrovať"/>
             </div>
-
           </div>
           <div className="modal-footer" style={{border:'none'}}></div>
         </div>
