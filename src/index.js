@@ -18,7 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
 middleware.push(validator())
 
 const finalReducer = combineReducers({
-  categories : reducer
+  categories : reducer,
+  user: 'halabala'
 })
 
 const store = createStore(

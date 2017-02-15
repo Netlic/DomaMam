@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import CategoryItem from './categoryItem'
+import $ from 'jquery'
 
 const categoryItems = (items = []) => {
   let original = items.length
@@ -9,9 +10,13 @@ const categoryItems = (items = []) => {
   return citems
 }
 
+const categoryDetail = (evt) => {
+  console.log($(evt).text())
+}
+
 const category = ({title, items = [{name:'item'},{name:'item1'}]}) => {
   return (
-    <div className="col-lg-4">
+    <div className="col-lg-4" onClick={categoryDetail}>
       <div className="col-lg-10 category col-lg-offset-1">
         <div>
           <h1>{title}</h1>
