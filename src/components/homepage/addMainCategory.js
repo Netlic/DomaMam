@@ -12,9 +12,9 @@ const addMainCategory = ({ onCategoryAdd }) => {
     <div
       className="col-lg-4"
       onClick={showNewCategoryForm}>
-      <div className="col-lg-8 category col-lg-offset-2 category-add">
+      <div className="col-lg-8 category col-lg-offset-2 category-add text-center">
 
-          <span className="glyphicon glyphicon-plus plus-category col-lg-offset-3"></span>
+          <span className="glyphicon glyphicon-plus plus-category"></span>
 
         <div className="col-lg-12 hidden category-form">
           <AddCategory/>

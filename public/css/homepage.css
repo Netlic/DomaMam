@@ -1,9 +1,8 @@
 .category {
   background-color: #eeeeee;
   border-radius: 5px;
-  height: 4cm;
+  height: 5cm;
   margin-bottom: 35px;
-  cursor: pointer;
 }
 
 .category-detail {
@@ -16,17 +15,18 @@
 
 .plus-category {
   font-size: 2cm;
-  padding-top: 1cm;
-
+  padding-top: 1.2cm;
+  text-shadow: 1px 2px #cccccc
 }
 
 .category-add {
   background-color: #ffffff;
   border: 2px solid grey;
+  cursor: pointer;
 }
 
 .category-add:hover {
-  border: 2px dashed #aaaaaa
+  border: 2px dashed #aaaaaa;
 }
 
 .category-adding {
@@ -119,4 +119,29 @@
 
 .register-or {
   color:#dddddd
+}
+
+.category-options {
+  margin-top: 10px;
+  border-bottom: 3px ridge #dddddd;
+}
+
+.category-options > div > span {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.category {
+  box-shadow: 5px 5px 5px #333333
+}
+
+.category-expanded {
+  position: absolute;
+  z-index: 100;
+  height:15cm;
+  width:30cm;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition:all 1s;
 }

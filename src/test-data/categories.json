@@ -1,5 +1,5 @@
 [
-  {"name": "Chladnička", "items": [{"name":"Jablko"}, {"name": "Klobása"}, {"name": "Banán"}]},
-  {"name": "Kuchyňa","items": [{"name":"Príbor"}]},
-  {"name": "Test"}
+  {"id": 0, "name": "Chladnička", "items": [{"name":"Jablko"}, {"name": "Klobása"}, {"name": "Banán"}]},
+  {"id": 1, "name": "Kuchyňa","items": [{"name":"Príbor"}]},
+  {"id": 2, "name": "Test"}
 ]
