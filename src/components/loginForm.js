@@ -15,8 +15,8 @@ class LoginForm extends Component {
   render() {
     return(
       <form onSubmit={this._onSubmit.bind(this)}>
-        <LoginInput/>
-        <LoginInput placeholder="heslo"/>
+        <LoginInput onChange={this._changeUser.bind(this)}/>
+        <LoginInput placeholder="heslo" type="password" onChange={this._changePass.bind(this)}/>
         <LoginBtn/>
         <LoginBtn className="btn btn-warning" text="Registrovať"/>
         <div>
@@ -35,6 +35,14 @@ class LoginForm extends Component {
   _onSubmit(evt) {
     evt.preventDefault();
     this.props.onSubmit(this.props.data.user, this.props.data.pass);
+  }
+
+  _changeUser(evt) {
+    alert('bu')
+  }
+
+  _changePass(evt) {
+
   }
 }
 

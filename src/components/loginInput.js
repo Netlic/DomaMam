@@ -1,10 +1,10 @@
 import React from 'react'
 
-const LoginInput = ({ placeholder = "prihlasovacie meno" }) => {
+const LoginInput = ({ type = "text", placeholder = "prihlasovacie meno", onChange = "" }) => {
   return (
     <div className="login-input">
       <div>
-        <input type="text" className="" placeholder={placeholder}/>
+        <input type={type} className="" placeholder={placeholder}/>
       </div>
     </div>
   )
