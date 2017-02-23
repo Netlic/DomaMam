@@ -17,7 +17,7 @@ const categoryDetail = (evt) => {
   categoryHeight = category.height()
   categoryWidth = parseFloat(category.width()) + parseFloat(category.css('padding-left')) + parseFloat(category.css('padding-right'))
   category.toggleClass('category-expanded')
-  
+
 }
 
 const category = ({title, items = [{name:'item'},{name:'item1'}]}) => {
@@ -25,11 +25,13 @@ const category = ({title, items = [{name:'item'},{name:'item1'}]}) => {
     <div className="col-lg-4">
       <div className="col-lg-10 category col-lg-offset-1">
         <div className="category-options">
-          <div className="col-lg-offset-6">
-            <span className="glyphicon glyphicon-fullscreen" onClick={categoryDetail}></span>
-            <span className="glyphicon glyphicon-move" onClick=""></span>
-            <span className="glyphicon glyphicon-heart-empty" onClick=""></span>
-            <span className="glyphicon glyphicon-remove" onClick=""></span>
+          <div className="row">
+            <div className="pull-right">
+              <span className="glyphicon glyphicon-fullscreen" onClick={categoryDetail}></span>
+              <span className="glyphicon glyphicon-move" onClick=""></span>
+              <span className="glyphicon glyphicon-heart-empty" onClick=""></span>
+              <span className="glyphicon glyphicon-remove" onClick=""></span>
+            </div>
           </div>
         </div>
         <div className="h1">{title}</div>

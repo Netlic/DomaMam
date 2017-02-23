@@ -124,9 +124,10 @@
 .category-options {
   margin-top: 10px;
   border-bottom: 3px ridge #dddddd;
+  padding-right: 20px;
 }
 
-.category-options > div > span {
+.category-options > div > div > span {
   cursor: pointer;
   margin-left: 10px;
 }
