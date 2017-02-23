@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 /**
-akcia, ktora by sa mala dispatchnut po odoslani formulara
-*/
-import login from '../actions/login.actions'
+ * akcia, ktora by sa mala dispatchnut po odoslani formulara
+ */
+import { login } from '../actions/login.actions'
 /**
-samotny prihlasovaci/registracny formular
-*/
+ * samotny prihlasovaci/registracny formular
+ */
 import LoginForm from './loginForm'
 import { connect } from 'react-redux';
 /**
-modalne prihlasovacie okno, z bootstrapu
-*/
+ * modalne prihlasovacie okno, z bootstrapu
+ */
 class Login extends Component {
   render(){
     const data = this.props.loginData
+    const dispatch = this.props.dispatch
     return(
       <div className="modal fad" id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
@@ -30,7 +31,7 @@ class Login extends Component {
             </div>
             <div className="modal-body ">
               <div className="login">
-                <LoginForm data={data} onSubmit={this._login}/>
+                <LoginForm dispatch={dispatch} data={data} onSubmit={this._login}/>
               </div>
             </div>
             <div className="modal-footer" style={{border:'none'}}></div>
@@ -40,10 +41,11 @@ class Login extends Component {
     )}
 
     /**
-    dispatchne login
-    */
-    _login(user, pass) {
-      this.props.dispatch(login(user, pass))
+     *dispatchne login
+     */
+    _login (user, pass) {
+console.log(this.props)
+      //this.props.dispatch(login(user, pass))
     }
 }
 

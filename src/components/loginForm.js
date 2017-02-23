@@ -1,21 +1,25 @@
 /**
-nastylovane policka na meno a heslo
-*/
+ * nastylovane policka na meno a heslo
+ */
 import LoginInput from './loginInput'
 /**
-nastylovane buttony vratane submitu
-*/
+ * nastylovane buttony vratane submitu
+ */
 import LoginBtn from './loginButton'
-import React, { Component} from 'react'
-
 /**
-prihlasovaci a registracny formular
-*/
+ * funkcia, ktora vytvori akciu zmenu stavu formulara, tj meno heslo
+ */
+import { changeForm } from '../actions/login.actions'
+import React, { Component} from 'react'
+const assign = Object.assign || require('object.assign');
+/**
+ * prihlasovaci a registracny formular
+ */
 class LoginForm extends Component {
   render() {
     return(
       <form onSubmit={this._onSubmit.bind(this)}>
-        <LoginInput onChange={this._changeUser.bind(this)}/>
+        <LoginInput className="blabla" onChange={this._changeUser.bind(this)}/>
         <LoginInput placeholder="heslo" type="password" onChange={this._changePass.bind(this)}/>
         <LoginBtn/>
         <LoginBtn className="btn btn-warning" text="Registrovať"/>
@@ -32,17 +36,46 @@ class LoginForm extends Component {
     )
   }
 
+  /**
+   * pri odoslani formulara sa disptachne akcie predana z predka
+   */
   _onSubmit(evt) {
     evt.preventDefault();
-    this.props.onSubmit(this.props.data.user, this.props.data.pass);
+    this.props.onSubmit(this.props.data.formState.user, this.props.data.formState.pass);
   }
 
+  /**
+   * zmena uzivatelskeho mena
+   */
   _changeUser(evt) {
-    alert('bu')
+    let newState = this._mergeWithCurrentState({ formState: {
+      user: evt.target.value,
+      pass: this.props.data.formState.pass
+    }})
+    this._emitChange(newState)
   }
 
+  /**
+   * zmena uzivatelskeho hesla
+   */
   _changePass(evt) {
+    let newState = this._mergeWithCurrentState({ formState: {
+      user: this.props.data.formState.user,
+      pass: evt.target.value
+    }})
+    this._emitChange(newState)
+  }
 
+  /**
+   * zmena stavu formulara
+   */
+  _emitChange(newState) {
+    this.props.dispatch(changeForm(newState));
+  }
+
+  // spoji aktualny state s novym state - om
+  _mergeWithCurrentState(change) {
+    return assign(this.props.data, change);
   }
 }
 

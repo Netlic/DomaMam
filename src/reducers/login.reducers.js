@@ -1,4 +1,4 @@
-import { SET_AUTH } from '../actions/login.actions'
+import { SET_AUTH, CHANGE_FORM } from '../actions/login.actions'
 
 const assign = Object.assign || require('object.assign');
 
@@ -12,6 +12,10 @@ const loggedUser = {
 
 const loginReducer = (state = loggedUser, action) => {
   switch(action.type){
+    case CHANGE_FORM:
+      return assign({}, state, {
+        formState: action.newState.formState
+      })
     case SET_AUTH:
       return assign({}, state, {
         loggedIn: action.newState
