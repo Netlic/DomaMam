@@ -1,4 +1,4 @@
-import {ADD_CATEGORY, REMOVE_CATEGORY, RECEIVE_CATEGORIES} from '../actions/homepage.actions.js'
+import { ADD_CATEGORY, REMOVE_CATEGORY, RECEIVE_CATEGORIES } from '../actions/homepage.actions.js'
 import { combineReducers } from 'redux'
 
 const categoryAddRemove = (state = [], action) => {
@@ -51,7 +51,7 @@ const allCategories = (state = {}, action) => {
 export default combineReducers({
   categoryAddRemove,
   categoriesList,
-  allCategories
+  allCategories,
 })
 
 export const getCategory = (state, name) => state.allCategories[name]
