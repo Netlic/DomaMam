@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 /**
  * akcia, ktora by sa mala dispatchnut po odoslani formulara
  */
-import { login } from '../actions/login.actions'
+import { login } from '../../actions/login.actions'
 /**
  * samotny prihlasovaci/registracny formular
  */
-import LoginForm from './loginForm'
+import LoginForm from '../../components/login/loginForm'
 import { connect } from 'react-redux';
 /**
  * modalne prihlasovacie okno, z bootstrapu
@@ -41,11 +41,11 @@ class Login extends Component {
     )}
 
     /**
-     *dispatchne login
+     * dispatchne login
      */
-    _login (user, pass) {
-console.log(this.props)
-      //this.props.dispatch(login(user, pass))
+    _login (user, pass, dispatch) {
+//console.log(this.props)
+      dispatch(login(user, pass))
     }
 }
 

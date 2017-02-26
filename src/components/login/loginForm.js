@@ -9,7 +9,7 @@ import LoginBtn from './loginButton'
 /**
  * funkcia, ktora vytvori akciu zmenu stavu formulara, tj meno heslo
  */
-import { changeForm } from '../actions/login.actions'
+import { changeForm } from '../../actions/login.actions'
 import React, { Component} from 'react'
 const assign = Object.assign || require('object.assign');
 /**
@@ -41,7 +41,7 @@ class LoginForm extends Component {
    */
   _onSubmit(evt) {
     evt.preventDefault();
-    this.props.onSubmit(this.props.data.formState.user, this.props.data.formState.pass);
+    this.props.onSubmit(this.props.data.formState.user, this.props.data.formState.pass, this.props.dispatch);
   }
 
   /**

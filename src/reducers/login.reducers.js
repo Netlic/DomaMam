@@ -18,7 +18,7 @@ const loginReducer = (state = loggedUser, action) => {
       })
     case SET_AUTH:
       return assign({}, state, {
-        loggedIn: action.newState
+        loggedIn: action.auth
       })
     default:
       return state
