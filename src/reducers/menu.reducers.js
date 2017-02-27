@@ -9,11 +9,17 @@ const userMenu = {
 const menuReducer = (state = {}, action) => {
   switch(action.type){
     case CHANGE_MENU:
-      console.log(state)
-      return state
+      let changeToMenu = userMenu.notLogged
+      if (action.logged === true) {
+        changeToMenu = userMenu.logged
+      }
+    return {items:[ ...userMenu.always, ...changeToMenu]}
     default:
-      console.log(action)
-      return {items:[ ...userMenu.always]}
+      let restMenu = userMenu.notLogged
+      if (typeof action.logged !== 'undefined' && action.logged === true) {
+        restMenu = userMenu.logged
+      }
+      return {items:[ ...userMenu.always, ...restMenu]}
   }
 }
 
