@@ -16,6 +16,6 @@ export const login = (user, pass) => dispatch => {
     }
     browserHistory.push('/');
     dispatch(authentify(true))
-
+    dispatch()
   })
 }

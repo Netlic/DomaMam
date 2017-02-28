@@ -1,7 +1,8 @@
 import React from 'react'
 import MenuItem from './menuItem'
+import { connect } from 'react-redux'
 
-const menu = () => {
+const menu = ({ menuItems }) => {
   return (
     <div className="col-lg-12 menu">
       <MenuItem title={'Doma mám'} isSelected={true}/>
@@ -10,4 +11,8 @@ const menu = () => {
   )
 }
 
-export default menu
+const getUserMenuItems = state => ({
+  menuItems: state.menu.items
+})
+
+export default connect(getUserMenuItems)(menu)
