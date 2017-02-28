@@ -11,6 +11,8 @@ import LoginBtn from './loginButton'
  */
 import { changeForm } from '../../actions/login.actions'
 import React, { Component} from 'react'
+import $ from 'jquery'
+
 const assign = Object.assign || require('object.assign');
 /**
  * prihlasovaci a registracny formular

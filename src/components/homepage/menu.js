@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 const menu = ({ menuItems }) => {
   return (
     <div className="col-lg-12 menu">
-      <MenuItem title={'Doma mám'} isSelected={true}/>
-      <MenuItem title={'Prihlásiť'} toggleModal={true} target={'#login-modal'}/>
+      { menuItems.map((name, index) => <MenuItem key={index} title={name} toggleModal={true} target={'#login-modal'}/>)}
+      {/*<MenuItem title={'Doma mám'} isSelected={true}/>
+    <MenuItem title={'Prihlásiť'} toggleModal={true} target={'#login-modal'}/>*/}
     </div>
   )
 }

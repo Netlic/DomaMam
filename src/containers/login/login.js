@@ -44,7 +44,6 @@ class Login extends Component {
      * dispatchne login
      */
     _login (user, pass, dispatch) {
-//console.log(this.props)
       dispatch(login(user, pass))
     }
 }

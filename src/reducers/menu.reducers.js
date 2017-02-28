@@ -16,7 +16,7 @@ const menuReducer = (state = {}, action) => {
   switch(action.type){
     case CHANGE_MENU:
       let changeToMenu = userMenu.notLogged
-      if (action.logged === true) {
+      if (action.menu.logged === true) {
         changeToMenu = userMenu.logged
       }
       return {items:[ ...userMenu.always, ...changeToMenu]}
