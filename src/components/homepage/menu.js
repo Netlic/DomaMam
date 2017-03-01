@@ -5,9 +5,7 @@ import { connect } from 'react-redux'
 const menu = ({ menuItems }) => {
   return (
     <div className="col-lg-12 menu">
-      { menuItems.map((name, index) => <MenuItem key={index} title={name} toggleModal={true} target={'#login-modal'}/>)}
-      {/*<MenuItem title={'Doma mám'} isSelected={true}/>
-    <MenuItem title={'Prihlásiť'} toggleModal={true} target={'#login-modal'}/>*/}
+      { menuItems.map((itemObj, index) => <MenuItem key={index} {...itemObj}/>) }
     </div>
   )
 }

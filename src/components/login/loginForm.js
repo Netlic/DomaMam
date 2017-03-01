@@ -44,6 +44,7 @@ class LoginForm extends Component {
   _onSubmit(evt) {
     evt.preventDefault();
     this.props.onSubmit(this.props.data.formState.user, this.props.data.formState.pass, this.props.dispatch);
+    
   }
 
   /**

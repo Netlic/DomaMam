@@ -4,9 +4,9 @@ import { CHANGE_MENU } from '../actions/menu.actions'
  * zadefinovanie poloziek menu
  */
 const userMenu = {
-    always: ['Doma mám'],
-    logged: ['Úspechy', 'Chcem predať'],
-    notLogged: ['Prihlásiť']
+    always: [{title:'Doma mám', isSelected:true}],
+    logged: [{title:'Úspechy'}, {title:'Chcem predať'}],
+    notLogged: [{title:'Prihlásiť', toggleModal:true, target:'#login-modal'}]
 }
 
 /**
