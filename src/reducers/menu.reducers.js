@@ -6,7 +6,7 @@ import { CHANGE_MENU } from '../actions/menu.actions'
 const userMenu = {
     always: [{title:'Doma mám', isSelected:true}],
     logged: [{title:'Úspechy'}, {title:'Chcem predať'}],
-    notLogged: [{title:'Prihlásiť', toggleModal:true, target:'#login-modal'}]
+    notLogged: [{title:'Prihlásiť', toggleModal:true}]
 }
 
 /**

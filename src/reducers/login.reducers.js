@@ -1,4 +1,4 @@
-import { SET_AUTH, CHANGE_FORM } from '../actions/login.actions'
+import { SET_AUTH, CHANGE_FORM, TOGGLE_LOGIN } from '../actions/login.actions'
 
 const assign = Object.assign || require('object.assign');
 
@@ -7,11 +7,16 @@ const loggedUser = {
     user: '',
     pass: '',
   },
-  loggedIn: false
+  loggedIn: false,
+  isLoginModalShown: false
 }
 
 const loginReducer = (state = loggedUser, action) => {
   switch(action.type){
+    case TOGGLE_LOGIN:
+      return assign({}, state, {
+        isLoginModalShown: action.toggle
+      })
     case CHANGE_FORM:
       return assign({}, state, {
         formState: action.newState.formState

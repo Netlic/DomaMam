@@ -5,9 +5,11 @@ import { changeMenu } from './menu.actions'
 
 export const SET_AUTH = "SET_AUTH"
 export const CHANGE_FORM = "CHANGE_FORM"
+export const TOGGLE_LOGIN = "TOGGLE_LOGIN"
 
 export const changeForm = newState => ({type: CHANGE_FORM, newState})
 export const authentify = auth => ({type: SET_AUTH, auth})
+export const toggleLogin = toggle => ({type: TOGGLE_LOGIN, toggle})
 
 export const login = (user, pass) => dispatch => {
   const salt = genSalt(user);
