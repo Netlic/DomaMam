@@ -25,6 +25,7 @@ class LoginModal extends Component {
             <LoginForm dispatch={this.props.dispatch} data={this.props.data} onSubmit={this._login}/>
           </div>
         </Modal.Body>
+        <Modal.Footer></Modal.Footer>
       </Modal>
     )
   }

@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react'
 import CategoryItem from './categoryItem'
 import $ from 'jquery'
 
+var originalWidth;
+var originalHeight;
+
 const categoryItems = (items = []) => {
   let original = items.length
   items.length = 2;
@@ -11,8 +14,8 @@ const categoryItems = (items = []) => {
 }
 
 const categoryDetail = (evt) => {
-  let clicked = $(evt.target), category = clicked.parents('.category')
-  category.toggleClass('category-expanded')
+  /*let clicked = $(evt.target), category = clicked.parents('.category')
+  category.toggleClass('category-expanded')*/
 }
 
 const category = ({title, items = [{name:'item'},{name:'item1'}]}) => {

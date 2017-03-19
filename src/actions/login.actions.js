@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import genSalt from '../utils/salt'
-import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router'
 import { changeMenu } from './menu.actions'
 
 export const SET_AUTH = "SET_AUTH"
@@ -19,6 +19,7 @@ export const login = (user, pass) => dispatch => {
     }
     browserHistory.push('/');
     dispatch(authentify(true))
+    dispatch(toggleLogin(false))
     dispatch(changeMenu({logged: true}))
   })
 }

@@ -14,8 +14,7 @@ const AddCategory = ({ dispatch }) => {
     <div>
       <form onSubmit={e => {
           e.preventDefault()
-          let category = $('#categoryName').val()
-          dispatch(addCategory(category))
+          dispatch(addCategory($('#categoryName').val()))
           $('#categoryName').val('')
         }}>
         <div className="form-group">

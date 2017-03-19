@@ -10,8 +10,7 @@ import LoginBtn from './loginButton'
  * funkcia, ktora vytvori akciu zmenu stavu formulara, tj meno heslo
  */
 import { changeForm } from '../../actions/login.actions'
-import React, { Component} from 'react'
-import $ from 'jquery'
+import React, { Component } from 'react'
 
 const assign = Object.assign || require('object.assign');
 /**

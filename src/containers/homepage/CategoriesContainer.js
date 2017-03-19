@@ -5,12 +5,15 @@ import Category from '../../components/homepage/category'
 import { getAllCategories } from '../../reducers/homepage.reducers.js'
 import AddCategoryButton from '../../components/homepage/addMainCategory'
 import { addCategoryToList } from '../../actions/homepage.actions'
+import CategoryDetail from '../../components/homepage/categoryDetail'
 
 const CategoriesContainer = ({ categories }) => (
   <CategoriesList>
+    <CategoryDetail />
     {categories.map((category, index) =>
-      <Category key={index} title={category.name} items={category.items}/> )}
-      <AddCategoryButton onCategoryAdd={() => addCategoryToList('test')}/>
+      <Category key={category.id} title={category.name} items={category.items}/> )}
+    <AddCategoryButton onCategoryAdd={() => addCategoryToList('test')}/>
+
   </CategoriesList>
 )
 

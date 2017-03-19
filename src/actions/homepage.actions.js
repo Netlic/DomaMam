@@ -1,5 +1,5 @@
 import categoriesApi from '../api/categories.js'
-import { emptyValue } from '../validatorFunctions'
+//import { emptyValue } from '../validatorFunctions'
 
 /*
  * action types

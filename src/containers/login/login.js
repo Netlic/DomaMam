@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { Modal } from 'react-bootstrap'
 import LoginModal from '../../components/login/loginModal'
 /**
  * modalne prihlasovacie okno, z bootstrapu

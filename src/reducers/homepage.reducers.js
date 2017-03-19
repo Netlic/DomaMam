@@ -1,15 +1,20 @@
 import { ADD_CATEGORY, REMOVE_CATEGORY, RECEIVE_CATEGORIES } from '../actions/homepage.actions.js'
 import { combineReducers } from 'redux'
 
-const categoryAddRemove = (state = [], action) => {
+const assign = Object.assign || require('object.assign');
+
+const categoryAddRemove = (state = {}, action) => {
   switch(action.type) {
     case ADD_CATEGORY:
-      return [
+      return assign({}, state, {
+        categories:{categoriesList: ['tralala']}
+      })
+      /*return [
         ...state,
         {
           text: action.text,
         }
-      ]
+      ]*/
     case REMOVE_CATEGORY:
       return state
     default:
