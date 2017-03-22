@@ -1,4 +1,4 @@
-import { ADD_CATEGORY, REMOVE_CATEGORY, RECEIVE_CATEGORIES } from '../actions/homepage.actions.js'
+import { ADD_CATEGORY, REMOVE_CATEGORY, RECEIVE_CATEGORIES, TOGGLE_CATEGORIES } from '../actions/homepage.actions.js'
 import { combineReducers } from 'redux'
 
 const assign = Object.assign || require('object.assign');
@@ -53,10 +53,24 @@ const allCategories = (state = {}, action) => {
   }
 }
 
+const categoryDetails = (state = {visible: false, label: 'category name here'}, action) => {
+  switch (action.type) {
+    case TOGGLE_CATEGORIES:
+      return assign({}, state, {
+        visible: action.visible,
+        label: action.label,
+        items: action.items
+      })
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   categoryAddRemove,
   categoriesList,
   allCategories,
+  categoryDetails
 })
 
 export const getCategory = (state, name) => state.allCategories[name]

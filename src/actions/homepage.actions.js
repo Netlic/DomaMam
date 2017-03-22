@@ -8,6 +8,7 @@ import categoriesApi from '../api/categories.js'
 export const ADD_CATEGORY = "ADD_CATEGORY"
 export const REMOVE_CATEGORY = "REMOVE_CATEGORY"
 export const RECEIVE_CATEGORIES = "RECEIVE_CATEGORIES"
+export const TOGGLE_CATEGORIES = "TOGGLE_CATEGORIES"
 
 /*
  * action creators
@@ -38,4 +39,11 @@ export const getAllCategories = () => dispatch => {
 
 export const addCategoryToList = name => dispatch => {
   dispatch(addCategory(name))
+}
+
+export const toggleDetails = data => ({type: "TOGGLE_CATEGORIES", data})
+
+export const toggleCategoryDetails = (toggle, label, items) => dispatch => {
+  let data = {toggle: toggle, label: label, items: items}
+  dispatch(toggleDetails(data))
 }

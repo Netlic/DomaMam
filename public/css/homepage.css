@@ -140,5 +140,12 @@
 .category-expanded {
   position: absolute;
   z-index: 100;
-  top: 49.2px
+  top: 49.2px;
+  padding-right: 45px;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.category-expanded > div {
+  margin-bottom: 5px
 }
