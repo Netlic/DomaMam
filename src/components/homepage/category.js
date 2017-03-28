@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react'
 import CategoryItem from './categoryItem'
 
-/*import $ from 'jquery'
-
-var originalWidth;
-var originalHeight;*/
-
+/**
+ * render poloziek danej kategorie
+ */
 const categoryItems = (items = []) => {
   let original = items.length
   items.length = 2;
@@ -14,20 +12,17 @@ const categoryItems = (items = []) => {
   return citems
 }
 
-const categoryDetail = () => {
-    alert('tu')
-  //toggleCategoryDetails(true, 'blabla', {})
-}
-
+/**
+ * vyrenderovanie kategorie
+ */
 const category = ({title, items = [{name:'item'},{name:'item1'}], onResize}) => {
-console.log(onResize)
   return (
     <div className="col-lg-4">
       <div className="col-lg-10 category col-lg-offset-1">
         <div className="category-options">
           <div className="row">
             <div className="pull-right">
-              <span className="glyphicon glyphicon-fullscreen" onClick=""></span>
+              <span className="glyphicon glyphicon-fullscreen" onClick={() => {onResize(true, title, items)}}></span>
               <span className="glyphicon glyphicon-move" onClick=""></span>
               <span className="glyphicon glyphicon-heart-empty" onClick=""></span>
               <span className="glyphicon glyphicon-remove" onClick=""></span>
@@ -36,7 +31,7 @@ console.log(onResize)
         </div>
         <div className="h1">{title}</div>
         {categoryItems(items)}
-        <div className="category-detail">...</div>
+        <div className="category-dots">...</div>
       </div>
     </div>
   )

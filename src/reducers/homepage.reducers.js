@@ -57,9 +57,9 @@ const categoryDetails = (state = {visible: false, label: 'category name here'}, 
   switch (action.type) {
     case TOGGLE_CATEGORIES:
       return assign({}, state, {
-        visible: action.visible,
-        label: action.label,
-        items: action.items
+        visible: action.data.toggle,
+        label: action.data.label,
+        items: action.data.items
       })
     default:
       return state

@@ -9,13 +9,15 @@ import CategoryDetail from '../../components/homepage/categoryDetail'
 
 const RenderDetails = ({ categoryDetails }) => {
   if (categoryDetails.visible) {
-    return <CategoryDetail label={categoryDetails.label}/>
+    return <CategoryDetail label={categoryDetails.label} items={categoryDetails.items}/>
   }
   return <span></span>
 }
 
+/**
+ * wrapper pre kategorie
+ */
 class CategoriesContainer extends Component {
-
   render(){
     let categories = this.props.categories,
     details = this.props.details
@@ -33,8 +35,8 @@ class CategoriesContainer extends Component {
     )
   }
 
-  _toggleDetails = () => {
-    let data = {toggle: true, label: 'blabla', items: {}}
+  _toggleDetails = (toggle = true, label = "", items = {}) => {
+    let data = {toggle: toggle, label: label, items: items}
     this.props.dispatch(toggleDetails(data))
   }
 }
