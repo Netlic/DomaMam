@@ -7,9 +7,9 @@ import AddCategoryButton from '../../components/homepage/addMainCategory'
 import { addCategoryToList, toggleDetails } from '../../actions/homepage.actions'
 import CategoryDetail from '../../components/homepage/categoryDetail'
 
-const RenderDetails = ({ categoryDetails }) => {
+const RenderDetails = ({ categoryDetails, onResize }) => {
   if (categoryDetails.visible) {
-    return <CategoryDetail label={categoryDetails.label} items={categoryDetails.items}/>
+    return <CategoryDetail label={categoryDetails.label} items={categoryDetails.items} onResize={onResize}/>
   }
   return <span></span>
 }
@@ -23,7 +23,7 @@ class CategoriesContainer extends Component {
     details = this.props.details
     return(
       <CategoriesList>
-        <RenderDetails categoryDetails={details}/>
+        <RenderDetails categoryDetails={details} onResize={this._toggleDetails}/>
         {categories.map((category, index) =>
           <Category
             key={category.id}

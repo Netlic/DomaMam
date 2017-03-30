@@ -11,7 +11,7 @@ const CategoryItems = (items) => {
 /**
  * sluzi na zobrazenie detailov kategorie
  */
-const CategoryDetail = ({ label = "category name here", items }) => {
+const CategoryDetail = ({ label = "category name here", items, onResize }) => {
   return(
     <div className={"category-expanded"}>
       <div className="category-detail">
@@ -19,7 +19,7 @@ const CategoryDetail = ({ label = "category name here", items }) => {
           <div className="row" style={{paddingTop:'5px'}}>
             <div className="pull-right">
               <span className="glyphicon glyphicon-heart-empty" onClick=""></span>
-              <span className="glyphicon glyphicon-remove" onClick=""></span>
+              <span className="glyphicon glyphicon-remove" onClick={() => {onResize(false)}}></span>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@ const CategoryDetail = ({ label = "category name here", items }) => {
         <div className="row">
           {CategoryItems(items)}
           <div className="col-lg-4">
-            <button type="button" className="btn col-lg-offset-1">Späť</button>
+            <button type="button" className="btn col-lg-offset-1" onClick={() => {onResize(false)}}>Späť</button>
           </div>
         </div>
       </div>

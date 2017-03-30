@@ -12,7 +12,7 @@ const userMenu = {
 /**
  * da do state - u polozky menu, ci uz prihlaseneho alebo neprihlaseneho uzivatela
  */
-const menuReducer = (state = {}, action) => {
+const menuReducer = (state = {items:[ ...userMenu.always, ...userMenu.notLogged]}, action) => {
   switch(action.type){
     case CHANGE_MENU:
       let changeToMenu = userMenu.notLogged
@@ -21,11 +21,7 @@ const menuReducer = (state = {}, action) => {
       }
       return {items:[ ...userMenu.always, ...changeToMenu]}
     default:
-      let restMenu = userMenu.notLogged
-      if (typeof action.logged !== 'undefined' && action.logged === true) {
-        restMenu = userMenu.logged
-      }
-      return {items:[ ...userMenu.always, ...restMenu]}
+      return state
   }
 }
 
