@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
 import MenuItem from './menuItem'
 import { connect } from 'react-redux'
-import { Glyphicon, DropdownButton } from 'react-bootstrap'
+import { Glyphicon, Dropdown } from 'react-bootstrap'
 
 const RenderUserMenu = ({ logged }) => {
   if (logged) {
-    return <div className="pull-right"><div className="item-menu"><Glyphicon glyph="user" /></div></div>
+    return (<div className="pull-right">
+              <div className="user-item-menu" style={{paddingTop:'2px', paddingBottom: '2px'}}>
+                <Dropdown id="user-dropdown">
+                  <Dropdown.Toggle>
+                    <Glyphicon glyph="user" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="super-colors">
+                    <MenuItem eventKey="1">Action</MenuItem>
+                    <MenuItem eventKey="2">Another action</MenuItem>
+                    <MenuItem eventKey="3" active>Active Item</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey="4">Separated link</MenuItem>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+            </div>)
   }
   return null
 }

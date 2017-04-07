@@ -66,10 +66,11 @@
 
 .menu {
   background-color: #eeeeee;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  padding: 0px
 }
 
-.item-menu, .selected-item-menu {
+.item-menu, .selected-item-menu, .user-item-menu {
   margin: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
